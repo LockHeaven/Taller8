@@ -39,6 +39,7 @@
                 <td>{{ persona.residencia.nombre }}</td>
                 <td>
                     <button><a href="{% url 'editar_usuario/{{ persona.id }}' %}">Editar</a></button>
+                    <button><a href="{% url 'eliminar_usuario/{{ persona.id }}' %}">Eliminar</a></button>
                     <button><a href="{% url 'index' %}">Inicio</a></button>
                 </td>
                 {% endfor %}
