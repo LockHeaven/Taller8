@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Usuario</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Tipo Documento</th>
+                <th>Documento</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Usuario</th>
+                <th>Password</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Edad</th>
+                <th>Residencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% csrf_token %}
+            {% for persona in persona %}                
+            <tr>
+                <td>{{ persona.nombres }}</td>
+                <td>{{ persona.apellidos }}</td>
+                <td>{{ persona.tipodocumento.nombre }}</td>
+                <td>{{ persona.documento }}</td>
+                <td>{{ persona.email }}</td>
+                <td>{{ persona.telefono }}</td>
+                <td>{{ persona.usuario }}</td>
+                <td>{{ persona.password }}</td>
+                <td>{{ persona.fechanacimiento }}</td>
+                <td>{{ persona.edad }}</td>
+                <td>{{ persona.residencia.nombre }}</td>
+                <td>
+                    <button><a href="{% url 'editar_usuario/{{ persona.id }}' %}">Editar</a></button>
+                    <button><a href="{% url 'index' %}">Inicio</a></button>
+                </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
