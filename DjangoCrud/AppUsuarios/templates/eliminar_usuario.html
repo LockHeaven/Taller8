@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    {% csrf_token %}
     <h3>¿Esta seguro de eliminar a {{persona.nombres}</h3>
     <button type="submit">Eliminar</button>
     <button><a href="{% url 'index' %}">Cancelar</a></button>
