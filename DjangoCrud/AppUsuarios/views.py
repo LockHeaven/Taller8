@@ -39,7 +39,7 @@ def eliminarUsuario(request,id):
     if request.method == 'POST':
         persona.delete()
         return redirect('index')
-    return render(request,'',{'persona':persona})
+    return render(request,'eliminar_usuario.html',{'persona':persona})
 
 
 Bucaramanga = ciudad(
